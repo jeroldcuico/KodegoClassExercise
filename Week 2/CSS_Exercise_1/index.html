@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Jerold Exercise</title>
+	<style>
+		.container {
+			width: 43rem;
+			background: url("./assets/header.jpg");
+			margin: 0 auto;
+			height: 7rem;
+			background-color: #1d242c;
+		}
+
+		.white-area {
+			width: 640px;
+			border-radius: 15px;
+			background-color: white;
+			box-shadow: 0 1px 6px 0px #000;
+			position: absolute;
+			left: 0;
+			right: 0;
+			margin: 60px auto 0 auto;
+		}
+
+		.blue-area {
+			width: 167px;
+			z-index: 1; /* Make the blue area faces forward*/
+			position: absolute;
+			left: 0;
+			margin: 42px auto 0 auto;
+			height: 142px;
+			background-color: #03458f;
+			right: 0;
+			border-radius: 8px;
+			
+		}
+
+		.content-left {
+			float: left;
+		}
+
+		.content-right {
+			float: right;
+		}
+
+		.logistics {
+			padding: 12px 12px 3px 12px;
+		}
+
+		.content-left,
+		.content-right {
+			padding: 17px;
+		}
+
+		.button-area {
+			padding: 0 70px;
+
+		}
+
+		button {
+			border: none;
+			width: 27px;
+			height: 27px;
+			border-radius: 50%;
+			font-weight: bold;
+			color: #03458f;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="container">
+		<div class="blue-area">
+			<div class="logistics">
+				<img src="./assets/logistics.jpg" alt="logistics">
+			</div>
+			<div class="button-area">
+				<button> > </button>
+			</div>
+		</div>
+		<div class="white-area">
+			<div class="content-left">
+				<img src="./assets/iff.jpg" alt="iff">
+			</div>
+			<div class="content-right">
+				<img src="./assets/cb.jpg" alt="cb">
+			</div>
+		</div>
+
+
+	</div>
+
+</body>
+
+</html>

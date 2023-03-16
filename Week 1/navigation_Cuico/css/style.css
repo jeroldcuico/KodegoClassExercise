@@ -1,0 +1,12 @@
+.container {
+  display: grid;
+  grid-template-columns: 150px auto;
+}
+
+.article {
+  padding-left: 1rem;
+}
+
+.navlist li{
+  list-style-type: none;
+}

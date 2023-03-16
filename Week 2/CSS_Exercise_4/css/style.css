@@ -1,0 +1,65 @@
+body {
+    font-family: system-ui;
+}
+
+.container {
+    max-width: 1024px;
+    /* margin: 0 auto; */
+}
+
+/* Grid Col - Row Area */
+.grid {
+    display: grid;
+    border: 3px solid #ffa500;
+}
+
+.card {
+    color: black;
+    text-align: center;
+    background: #ffedcc;
+    font-size: 20px;
+    padding: 3rem;
+    border: 3px solid #ffa500;
+    font-weight: bold;
+}
+
+.col-row-grid {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.col-row-grid .card:nth-child(1) {
+    grid-row: 1 / 3;
+    /*TODO as the same as:  grid-row: 1 / span 2; */
+}
+
+.col-row-grid .card:nth-child(10) {
+    grid-row: 3 / 5;
+    /*TODO as the same as:  grid-row: 3 / span 2; */
+}
+
+.col-span-2 {
+    grid-column: span 2;
+}
+
+/* Grid Area */
+
+.grid-area {
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+}
+
+.grid-area .card:nth-child(5) {
+    background: #adff2f;
+    grid-area: 1 / 5 / 2 / 7;
+}
+
+.grid-area .card:nth-child(8) {
+    background: #7fffd4;
+    grid-area: 2 / 2 / 5 / 4;
+}
+
+.grid-area .card:nth-child(9) {
+    background: #00ffff;
+    /* grid-area: 2 / 4 / 5 / 6 */
+    grid-area: 2 / 4 / span 3 / span 2
+}

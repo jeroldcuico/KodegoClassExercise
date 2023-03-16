@@ -1,0 +1,101 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1 {
+    font-size: 56px;
+}
+h2{
+    font-size:40px;
+}
+
+h3 {
+    color: #323b4c;
+    font-size: 31px;
+}
+
+body {
+    font-family: system-ui;
+}
+
+.container {
+    width: 80%;
+    height: 100vh;
+    margin: 0 auto;
+}
+
+.photo{
+    padding-top: 4rem;
+    padding-left: 4rem;
+    background-color: #323b4c;
+}
+
+.section{
+    padding: 10px 0;
+}
+.left-pane {
+    background-color: #323b4c;
+    width: 455px;
+    color: white;
+    padding-top: 18px;
+}
+.right-pane {
+    color: #323b4c;
+}
+.left-pane,
+.right-pane {
+    padding-left: 4rem;
+}
+
+.left-pane h2,
+.right-pane h2 {
+    border-bottom: 3px solid;
+}
+
+.right-pane h2{
+    padding-top: 18px;
+}
+.left-pane li {
+    padding: 7px 0;
+    list-style-type: none;
+}
+
+.list-exp {
+    padding-left: 18px;
+    list-style-type: circle;
+    font-size: 25px;
+    color:#737373;
+}
+.list-exp li{
+    padding-bottom:23px;
+}
+
+.company {
+    font-size: 20px;
+    letter-spacing: 2px;
+    padding-bottom: 2px;
+}
+
+
+.job-desription {
+    padding: 16px 0;
+}
+
+.description {
+    font-size: 16px;
+}
+.job-title {
+    letter-spacing: 11px;
+}
+
+.expertise {
+    padding-left: 22px;
+}
+
+.expertise li {
+    list-style-type: disc;
+}
