@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>CSS Responsive</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./css/bootstrap.css" />
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <script src="./js/bootstrap.bundle.min.js"></script>
+  </head>
+
+  <body>
+    <div class="container-fluid">
+      <div class="row align-items-center">
+        <div class="col d-flex justify-content-start">
+          <h1>Clients</h1>
+        </div>
+        <div class="col d-flex justify-content-end">
+          <button class="btn btn-dark" style="color: white">
+            <i class="fa-solid fa-plus"></i>
+            Add Clients
+          </button>
+        </div>
+      </div>
+      <div class="card container-fluid p-3 mb-3">
+        <form class="d-flex" role="search">
+          <div class="row">
+            <div class="col align-items-center ">
+              <input
+                class="form-control me-2 d-inline"
+                style="width: 15rem"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+              <button class="btn btn-dark" type="submit">Search</button>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <table class="table table-striped table-bordered table-fixed">
+        <thead>
+          <tr class="table-primary">
+            <th style="width: 20%;" scope="col">Name</th>
+            <th scope="col">ID</th>
+            <th scope="col">Address</th>
+            <th scope="col">Contact Number</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Jaquan Kassulke Bosco</td>
+            <td>1649187987809552</td>
+            <td>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus
+              quis doloremque dolorum laboriosam dolores itaque magnam inventore
+              ullam rem eveniet?
+            </td>
+            <td>112312312312324498</td>
+          </tr>
+          <tr>
+            <td>Ambrose Legross Feeney</td>
+            <td>1649187987809552</td>
+            <td>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus
+              quis doloremque dolorum laboriosam dolores itaque magnam inventore
+              ullam rem eveniet?
+            </td>
+            <td>112312312312324498</td>
+          </tr>
+          <tr>
+            <td>Forest Wyman Williamson</td>
+            <td>1649187987809552</td>
+            <td>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus
+              quis doloremque dolorum laboriosam dolores itaque magnam inventore
+              ullam rem eveniet?
+            </td>
+            <td>112312312312324498</td>
+          </tr>
+          <tr>
+            <td>Ellie West Bechtelar</td>
+            <td>1649187987809552</td>
+            <td>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus
+              quis doloremque dolorum laboriosam dolores itaque magnam inventore
+              ullam rem eveniet?
+            </td>
+            <td>112312312312324498</td>
+          </tr>
+          <tr>
+            <td>Marshall Rutherford Bednar</td>
+            <td>1649187987809552</td>
+            <td>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus
+              quis doloremque dolorum laboriosam dolores itaque magnam inventore
+              ullam rem eveniet?
+            </td>
+            <td>112312312312324498</td>
+          </tr>
+        </tbody>
+      </table>
+      <nav aria-label="Page navigation example">
+        <ul class="pagination">
+          <li class="page-item"><a class="page-link" href="#"><</a></li>
+          <li class="page-item"><a class="page-link" href="#">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item"><a class="page-link" href="#">></a></li>
+          <li class="page-item d-flex align-items-center px-3">
+            <span class="fw-lighter">16-20 / 20 records</span>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </body>
+</html>
