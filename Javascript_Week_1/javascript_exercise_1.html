@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Introduction to Javascript</title>
+</head>
+
+<body>
+    <header>
+        <h1 class="site-title">JavaScript Hands on Exercise 1
+        </h1>
+    </header>
+
+    <section class="diagonal">
+        <div class="wrapper">
+            <h2 class="section-title">Machine Problem 1</h2>
+            <label for="inputNumOnly">Input Number only: </label>
+            <input type="number" id="inputNumOnly">
+            <button onclick="CheckNumber()">Check Number</button>
+            <h3 id="result_num"></h3>
+        </div>
+    </section>
+    <section class="gradient">
+        <div class="wrapper">
+            <h2 class="section-title">Machine Problem 2</h2>
+            <label for="inputNumChar">Input Single Character only: </label>
+            <input type="text" id="inputNumChar" maxlength="1">
+            <button onclick="CheckLetter()">Check Vowel</button>
+            <h3 id="result_char"></h3>
+        </div>
+    </section>
+    <script>
+        function CheckNumber() {
+            const number = document.getElementById('inputNumOnly').value
+            if (number % 2 === 0) {
+                document.getElementById('result_num').innerHTML = 'The number is Even'
+            } else {
+                document.getElementById('result_num').innerHTML = 'The number is Odd'
+            }
+        }
+
+        function CheckLetter() {
+            const character = document.getElementById('inputNumChar').value.toLowerCase()
+            const vowel = ['a', 'e', 'i', 'o', 'u']
+            //if (character === 'a' || character === 'e' || character === 'i' || character === 'o' || character === 'u') {
+            if(vowel.includes(character)){
+                document.getElementById('result_char').innerHTML = 'The Letter declared is a Vowel'
+            } else {
+                document.getElementById('result_char').innerHTML = 'The Letter declared is a Consonant'
+            }
+        }
+    </script>
+</body>
+
+</html>

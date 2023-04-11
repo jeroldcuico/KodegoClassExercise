@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Bootstrap Exercise 2</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./css/bootstrap.css" />
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    />
+    <script def src="./js/bootstrap.bundle.min.js"></script>
+    <style>
+      body {
+        background-color: #f9fafc;
+      }
+      h2 {
+        color: #e8a664 !important;
+      }
+      .custom-nav li a {
+        border-color: #dee2e6 #dee2e6 #dee2e6 !important;
+        border-top-width: 3px !important;
+        margin-right: 5px;
+        color: #737176 !important;
+      }
+
+      .custom-nav a:hover,
+      .custom-nav .active {
+        color: #e8a664 !important;
+        border-top-color: #e8a664 !important;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <!-- Breadcrumbs -->
+      <nav style="--bs-breadcrumb-divider: ''" aria-label="breadcrumb">
+        <ol class="breadcrumb breadcrumb-sm">
+          <li class="breadcrumb-item">
+            <i class="fa-solid fa-arrow-left"></i><a href="#">Back to List</a>
+          </li>
+        </ol>
+      </nav>
+      <div class="row align-items-center">
+        <div class="col justify-content-start">
+          <h2>Client Profile (John Doe)</h2>
+        </div>
+        <div class="col d-flex justify-content-end">
+          <button class="btn btn-dark" style="color: white">
+            <i class="fa-solid fa-plus"></i>
+            Add Client
+          </button>
+        </div>
+      </div>
+      <div class="bg-white border rounded-3 my-3 py-3">
+        <div class="row">
+          <div class="col-4">
+            <div
+              class="d-flex flex-column align-items-center justify-content-center"
+            >
+              <svg
+                class="bd-placeholder-img img-thumbnail my-2"
+                width="200"
+                height="200"
+                xmlns="http://www.w3.org/2000/svg"
+                role="img"
+                aria-label="A generic square placeholder image with a white border around it, making it resemble a photograph taken with an old instant camera: 200x200"
+                preserveAspectRatio="xMidYMid slice"
+                focusable="false"
+              >
+                <title>
+                  A generic square placeholder image with a white border around
+                  it, making it resemble a photograph taken with an old instant
+                  camera
+                </title>
+                <rect width="100%" height="100%" fill="#868e96"></rect>
+              </svg>
+              <button class="btn btn-dark" style="color: white">
+                Upload Photo
+              </button>
+            </div>
+          </div>
+          <div class="col-4">
+            <table class="table table-borderless">
+              <tbody>
+                <tr>
+                  <th class="text-end">ID</th>
+                  <td>123456789</td>
+                </tr>
+                <tr>
+                  <th class="text-end">Birthdate</th>
+                  <td>10-27-1950</td>
+                </tr>
+                <tr>
+                  <th class="text-end">Start Date</th>
+                  <td>10-27-2019</td>
+                </tr>
+                <tr>
+                  <th class="text-end">Language</th>
+                  <td>English</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="col-4 d-flex justify-content-end px-4">
+            <i class="fa-solid fa-2x fa-pen-to-square"></i>
+          </div>
+        </div>
+      </div>
+      <ul class="nav nav-tabs custom-nav">
+        <li class="nav-item">
+          <a class="nav-link" data-bs-toggle="tab" href="#contact-details"
+            >Contact Details</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-bs-toggle="tab" href="#files-attached"
+            >Files Attached</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-bs-toggle="tab" href="#service-delivered">Service Delivered</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-bs-toggle="tab" href="#client-progress">Client Progress Notes</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-bs-toggle="tab" href="#client-funds">Client Funds Monitoring</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-bs-toggle="tab" href="#time-tracker">Time Tracker</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-bs-toggle="tab" href="#feedback-com">Feedback and Complaints</a>
+        </li>
+      </ul>
+      <div class="card tab-content">
+        <div id="contact-details" class="tab-pane active">
+          <div class="card-body">
+            <h2>Contact Details</h2>
+            <div class="row mb-2">
+              <div class="col-sm">
+                <label for="Address1" class="form-label">Address 1</label>
+                <input
+                  class="form-control form-control-sm"
+                  type="text"
+                  name="address1"
+                  aria-label="address1"
+                />
+              </div>
+              <div class="col-sm">
+                <label for="Address2" class="form-label">Address 2</label>
+                <input
+                  class="form-control form-control-sm"
+                  type="text"
+                  name="address2"
+                  aria-label="address2"
+                />
+              </div>
+              <div class="col-sm">
+                <label for="state" class="form-label">State</label>
+                <input
+                  class="form-control form-control-sm"
+                  type="text"
+                  name="state"
+                  aria-label="state"
+                />
+              </div>
+              <div class="col-sm">
+                <label for="city" class="form-label">City</label>
+                <input
+                  class="form-control form-control-sm"
+                  type="text"
+                  name="city"
+                  aria-label="city"
+                />
+              </div>
+            </div>
+            <div class="row mb-2">
+              <div class="col-sm-3">
+                <label for="postalcode" class="form-label">Postal Code</label>
+                <input
+                  class="form-control form-control-sm"
+                  type="text"
+                  name="postalcode"
+                  aria-label="postalcode"
+                />
+              </div>
+              <div class="col-sm-3">
+                <label for="postalcode" class="form-label">Country</label>
+                <div class="col">
+                  <select
+                    class="form-select form-select-sm"
+                    aria-label="country"
+                  >
+                    <option value="4" selected>-- None Selected --</option>
+                    <option value="1">Australia</option>
+                    <option value="2">USA</option>
+                    <option value="3">Canada</option>
+                    <option value="4">Philippines</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm">
+                <label for="mobilephone" class="form-label">Mobile Phone</label>
+                <input
+                  class="form-control form-control-sm"
+                  type="text"
+                  name="mobilephone"
+                  aria-label="mobilephone"
+                />
+              </div>
+              <div class="col-sm">
+                <label for="homephone" class="form-label">Home Phone</label>
+                <input
+                  class="form-control form-control-sm"
+                  type="text"
+                  name="homephone"
+                  aria-label="homephone"
+                />
+              </div>
+              <div class="col-sm">
+                <label for="email" class="form-label">Email</label>
+                <input
+                  class="form-control form-control-sm"
+                  type="email"
+                  name="email"
+                  aria-label="email"
+                />
+              </div>
+              <div class="col-sm">
+                <label for="otherphone" class="form-label">Other Phone</label>
+                <input
+                  class="form-control form-control-sm"
+                  type="text"
+                  name="otherphone"
+                  aria-label="otherphone"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="files-attached" class="tab-pane fade">
+          <div class="card-body">
+            <div class="row mb-2">
+              <h2>Files Attached</h2>
+            </div>
+          </div>
+        </div>
+        <div id="service-delivered" class="tab-pane fade">
+          <div class="card-body">
+            <div class="row mb-2">
+              <h2>Service Delivered</h2>
+            </div>
+          </div>
+        </div>
+        <div id="client-progress" class="tab-pane fade">
+          <div class="card-body">
+            <div class="row mb-2">
+              <h2>Client Progress</h2>
+            </div>
+          </div>
+        </div>
+        <div id="client-funds" class="tab-pane fade">
+          <div class="card-body">
+            <div class="row mb-2">
+              <h2>Client Funds</h2>
+            </div>
+          </div>
+        </div>
+        <div id="time-tracker" class="tab-pane fade">
+          <div class="card-body">
+            <div class="row mb-2">
+              <h2>Time Tracker</h2>
+            </div>
+          </div>
+        </div>
+        <div id="feedback-com" class="tab-pane fade">
+          <div class="card-body">
+            <div class="row mb-2">
+              <h2>Feedback and Complaints</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

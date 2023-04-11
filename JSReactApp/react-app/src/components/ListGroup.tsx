@@ -8,7 +8,6 @@ interface ListGroupProps {
 
 function ListGroup({ items, heading, onSelectItem }: ListGroupProps) {
   const [selectedIndex, setSelectedIndex] = useState(-1);
-
   return (
     <>
       <h1>{heading}</h1>

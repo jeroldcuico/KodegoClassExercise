@@ -1,0 +1,65 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: #121212;
+  color:white;
+  font-family: system-ui;
+}
+
+.wrapper {
+  max-width: 80rem;
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+
+.site-title {
+  font-size: 3rem;
+  text-align: center;
+  padding-block: 3rem;
+}
+
+.section-title {
+  font-size: 2.25rem;
+}
+
+section {
+  padding-block: 5rem;
+}
+
+.diagonal {
+  --skew-angle: -2deg;
+  --background: linear-gradient(45deg, #12c2e9, #c471ed, #f64f59);
+  position: relative;
+  isolation: isolate;
+}
+
+.diagonal::after {
+  content: "";
+  background-image: var(--background);
+  position: absolute;
+  inset: 0;
+  transform: skewY(var(--skew-angle));
+  z-index: -1;
+}
+
+.gradient {
+  --skew-angle2: ;
+  --background2: linear-gradient(45deg, #4fd326, #c5e633, #d89c2d);
+  position: relative;
+  color:black;
+  isolation: isolate;
+  margin-block: 3rem;
+}
+
+.gradient::after {
+  content: "";
+  background-image: var(--background2);
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+}
