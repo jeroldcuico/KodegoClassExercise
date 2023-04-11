@@ -45,9 +45,9 @@
 
         function CheckLetter() {
             const character = document.getElementById('inputNumChar').value.toLowerCase()
-            const vowel = ['a', 'e', 'i', 'o', 'u']
+            const vowels = ['a', 'e', 'i', 'o', 'u']
             //if (character === 'a' || character === 'e' || character === 'i' || character === 'o' || character === 'u') {
-            if(vowel.includes(character)){
+            if (vowels.includes(character)) {
                 document.getElementById('result_char').innerHTML = 'The Letter declared is a Vowel'
             } else {
                 document.getElementById('result_char').innerHTML = 'The Letter declared is a Consonant'
