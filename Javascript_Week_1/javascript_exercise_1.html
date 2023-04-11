@@ -36,6 +36,7 @@
     <script>
         function CheckNumber() {
             const number = document.getElementById('inputNumOnly').value
+            if (number === '') return
             if (number % 2 === 0) {
                 document.getElementById('result_num').innerHTML = 'The number is Even'
             } else {
@@ -46,7 +47,8 @@
         function CheckLetter() {
             const character = document.getElementById('inputNumChar').value.toLowerCase()
             const vowels = ['a', 'e', 'i', 'o', 'u']
-            //if (character === 'a' || character === 'e' || character === 'i' || character === 'o' || character === 'u') {
+            if (character === '') return
+            // if (character === 'a' || character === 'e' || character === 'i' || character === 'o' || character === 'u') {
             if (vowels.includes(character)) {
                 document.getElementById('result_char').innerHTML = 'The Letter declared is a Vowel'
             } else {
