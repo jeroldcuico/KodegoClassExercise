@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Introduction to Javascript</title>
+</head>
+
+<body>
+  <header>
+    <h1 class="site-title">JavaScript Hands on Exercise 1</h1>
+  </header>
+
+  <section class="one">
+    <div class="wrapper">
+      <h3>Machine Problem 1</h3>
+      <h4 class="people"></h4>
+    </div>
+  </section>
+  <section class="gradient2">
+    <div class="wrapper">
+      <h3>Machine Problem 2</h3>
+      <h4 class="countAge"></h4>
+    </div>
+  </section>
+  <section class="gradient">
+    <div class="wrapper">
+      <h3>Machine Problem 3</h3>
+      <h4 class="countLang"></h4>
+    </div>
+  </section>
+  <script>
+    let staff = [
+      {
+        name: "Oliver Queen",
+        title: "CEO",
+        gender: "male",
+        age: 38,
+        languages: ["english", "spanish"],
+      },
+      {
+        name: "Ben Hur",
+        title: "Security consultant",
+        gender: "male",
+        age: 25,
+        languages: ["latin", "italian"],
+      },
+      {
+        name: "Jessica Alba",
+        title: "Admin Assistant",
+        gender: "female",
+        age: 23,
+        languages: ["english", "spanish"],
+      },
+      {
+        name: "Pepper Piper",
+        title: "Quality Assurance",
+        gender: "female",
+        age: 32,
+        languages: ["english", "spanish"],
+      },
+      {
+        name: "Red Sullivan",
+        title: "Project Manager",
+        gender: "male",
+        age: 27,
+        languages: ["russian", "english"],
+      },
+      {
+        name: "Juan Dela Cruz",
+        title: "Manager",
+        age: 24,
+        gender: "male",
+        languages: ["russian", "french"],
+      },
+      {
+        name: "Anna Salvador",
+        title: "Junior Dev",
+        age: 21,
+        gender: "female",
+        languages: ["english", "french"],
+      },
+      {
+        name: "Mark Bautista",
+        title: "Senior Fullstack Dev",
+        age: 28,
+        gender: "male",
+        languages: ["russion", "spanish"],
+      },
+      {
+        name: "Micheal Garcia",
+        title: "CEO",
+        age: 40,
+        gender: "male",
+        languages: ["english", "latin"],
+      }
+    ];
+
+    //Machine Problem 1
+    staff.forEach((person) => {
+      const { name, age } = person;
+      document.querySelector(".people").innerHTML += `Name: ${name} Age: ${age} <br/>`;
+    });
+
+    //Machine Problem 2
+    let countAge = 0;
+    for (let i = 0; i < staff.length; i++) {
+      if (staff[i].age > 30) {
+        countAge++;
+      }
+    }
+    document.querySelector(".countAge").innerHTML = `Count of People of Ages greater than 30: ${countAge}`;
+    //Machine Problem 3
+    let countSpanish = 0;
+    staff.forEach((person) => {
+      if (person.languages.includes("english")) {
+        countSpanish++;
+      }
+    });
+    document.querySelector(".countLang").innerHTML = `Number of People who speaks Spanish: ${countSpanish}`;
+
+  </script>
+</body>
+
+</html>

@@ -1,71 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <title>Test Practice using CSS/Javascript</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <header>
-        <h1 class="site-title">Practice CSS with Javascript by Jerold
-        </h1>
+      <h1 class="site-title">Practice CSS with Javascript by Jerold</h1>
     </header>
 
     <section class="diagonal">
-        <div class="wrapper">
-            <h2 class="section-title">Basic Form Submit</h2>
-            <div id="selectID"></div>
-            <div class="formsubmit">
-                <input type="text" id="username"><br />
-                <input type="password" id="pass"><br />
-                <button id="submit">Submit</button>
-            </div>
+      <div class="wrapper">
+        <h2 class="section-title">Basic Form Submit</h2>
+        <div id="selectID"></div>
+        <div class="formsubmit">
+          <input type="text" id="username" /><br />
+          <input type="password" id="pass" /><br />
+          <button id="submit">Submit</button>
         </div>
+      </div>
     </section>
 
     <script>
-        //Remove Duplicates
-        let arr = ['race', 'racecar', 'racespeed', 'racespeed', 'race']
-        console.log(arr.filter((val, idx) => arr.indexOf(val) === idx))
-        console.log([...new Set(arr)])
+      //Remove Duplicates
+      let arr = ["race", "racecar", "racespeed", "racespeed", "race"];
+      console.log(arr.filter((val, idx) => arr.indexOf(val) === idx));
+      console.log([...new Set(arr)]);
 
-        function isPalindrome(word) {
-            const wordtoCheck = document.getElementById(word).value
-            const reverse = wordtoCheck.split('').reverse().join('')
-            return wordtoCheck === reverse
+      function isPalindrome(word) {
+        const wordtoCheck = document.getElementById(word).value;
+        const reverse = wordtoCheck.split("").reverse().join("");
+        return wordtoCheck === reverse;
+      }
+      document
+        .getElementById("checkPalindrome")
+        .addEventListener("click", (e) => {
+          e.preventDefault();
+          console.log(isPalindrome("ispalindrome"));
+        });
+
+      document.getElementById("submit").addEventListener("click", function (e) {
+        e.preventDefault(); //prevents refresh after clicking submit button
+        const text = document.getElementById("username").value;
+        const pass = document.getElementById("pass").value;
+        if (text === "andrew@kodego.ph" && pass === "1234") {
+          console.log(text, pass);
+        } else {
+          console.log("login failed");
         }
-        document.getElementById('checkPalindrome').addEventListener('click', (e) => {
-            e.preventDefault()
-            console.log(isPalindrome('ispalindrome'))
-        })
-
-
-
-
-        document.getElementById('submit').addEventListener('click', function (e) {
-            e.preventDefault() //prevents refresh after clicking submit button
-            const text = document.getElementById('username').value
-            const pass = document.getElementById('pass').value
-            if (text === 'andrew@kodego.ph' && pass === '1234') {
-                console.log(text, pass)
-            } else {
-                console.log('login failed')
-            }
-        })
-        const select = document.createElement('select')
-        for (let x = 60; x < 100; x++) {
-            const option = document.createElement('option')
-            option.value = x
-            option.innerHTML = x
-            select.appendChild(option)
-        }
-        document.getElementById('selectID').innerHTML = 'Grade: '
-        document.getElementById('selectID').appendChild(select)
+      });
+      const select = document.createElement("select");
+      for (let x = 60; x < 100; x++) {
+        const option = document.createElement("option");
+        option.value = x;
+        option.innerHTML = x;
+        select.appendChild(option);
+      }
+      document.getElementById("selectID").innerHTML = "Grade: ";
+      document.getElementById("selectID").appendChild(select);
     </script>
-</body>
-
+  </body>
 </html>

@@ -7,7 +7,7 @@
 body {
   margin: 0;
   background-color: #121212;
-  color:white;
+  color: white;
   font-family: system-ui;
 }
 
@@ -51,7 +51,7 @@ section {
   --skew-angle2: ;
   --background2: linear-gradient(45deg, #4fd326, #c5e633, #d89c2d);
   position: relative;
-  color:black;
+  color: black;
   isolation: isolate;
   margin-block: 3rem;
 }
@@ -62,4 +62,21 @@ section {
   position: absolute;
   inset: 0;
   z-index: -1;
+}
+
+.gradient2 {
+  background-color: #fbab7e;
+  background-image: linear-gradient(62deg, #fbab7e 0%, #f7ce68 100%);
+  margin-block: 2rem;
+}
+
+.one {
+  /* background-image: linear-gradient(
+      transparent 50%,
+      hsl(231, 53%, 75%, 0.5) 50%
+    ),
+    linear-gradient(90deg, hsl(226, 39%, 32%) 50%, hsl(226, 39%, 10%) 50%);
+  background-size: 4rem 4rem; */
+  background-color: white;
+  color: black;
 }
