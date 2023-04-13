@@ -122,7 +122,9 @@
     });
     document.querySelector(".countLang").innerHTML = `Number of People who speaks Spanish: ${countSpanish}`;
 
-    const filter = staff.filter(person => person.languages.includes('spanish'));
+    //Machine Problem 3 1 liner
+    
+    const filter = staff.filter(person => person.languages.includes('spanish')).length;
     console.log(filter)
 
   </script>
