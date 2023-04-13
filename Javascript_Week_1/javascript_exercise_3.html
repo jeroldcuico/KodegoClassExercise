@@ -116,11 +116,14 @@
     //Machine Problem 3
     let countSpanish = 0;
     staff.forEach((person) => {
-      if (person.languages.includes("english")) {
+      if (person.languages.includes("spanish")) {
         countSpanish++;
       }
     });
     document.querySelector(".countLang").innerHTML = `Number of People who speaks Spanish: ${countSpanish}`;
+
+    const filter = staff.filter(person => person.languages.includes('spanish'));
+    console.log(filter)
 
   </script>
 </body>
