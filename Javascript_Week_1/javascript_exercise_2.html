@@ -25,7 +25,10 @@
       <button id="product">*</button>
       <button id="quotient">/</button>
       <button id="exponent">Exponent</button>
+      <h1>Machine Problem 1</h1>
       <h3 class="result"></h3>
+      <h1>Machine Problem 2</h1>
+      <h3 class="result_if"></h3>
     </div>
   </section>
   <script>
@@ -61,6 +64,16 @@
         default: break;
       }
       document.querySelector('.result').innerHTML = `${action.charAt(0).toUpperCase() + action.slice(1)}: ${total}`;
+
+      // Machine Problem 2
+
+      if (action === 'sum') total = num1 + num2;
+      else if (action === 'difference') total = num1 - num2;
+      else if (action === 'product') total = num1 * num2;
+      else if (action === 'quotient') total = num1 / num2;
+      else if (action === 'exponent') total = num1 ** num2;
+
+      document.querySelector('.result_if').innerHTML = `${action.charAt(0).toUpperCase() + action.slice(1)}: ${total}`;
     }
 
   </script>
