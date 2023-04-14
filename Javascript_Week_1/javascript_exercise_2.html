@@ -16,100 +16,52 @@
 
   <section class="gradient">
     <div class="wrapper">
-      <h3>Machine Problem 3</h3>
-      <h4 class="countLang"></h4>
+      <label for="num1">Enter Number 1: </label>
+      <input type="number" id="num1">
+      <label for="num2">Enter Number 2: </label>
+      <input type="number" id="num2">
+      <button id="sum">+</button>
+      <button id="difference">-</button>
+      <button id="product">*</button>
+      <button id="quotient">/</button>
+      <button id="exponent">Exponent</button>
+      <h3 class="result"></h3>
     </div>
   </section>
   <script>
-    let staff = [
-      {
-        name: "Oliver Queen",
-        title: "CEO",
-        gender: "male",
-        age: 38,
-        languages: ["english", "spanish"],
-      },
-      {
-        name: "Ben Hur",
-        title: "Security consultant",
-        gender: "male",
-        age: 25,
-        languages: ["latin", "italian"],
-      },
-      {
-        name: "Jessica Alba",
-        title: "Admin Assistant",
-        gender: "female",
-        age: 23,
-        languages: ["english", "spanish"],
-      },
-      {
-        name: "Pepper Piper",
-        title: "Quality Assurance",
-        gender: "female",
-        age: 32,
-        languages: ["english", "spanish"],
-      },
-      {
-        name: "Red Sullivan",
-        title: "Project Manager",
-        gender: "male",
-        age: 27,
-        languages: ["russian", "english"],
-      },
-      {
-        name: "Juan Dela Cruz",
-        title: "Manager",
-        age: 24,
-        gender: "male",
-        languages: ["russian", "french"],
-      },
-      {
-        name: "Anna Salvador",
-        title: "Junior Dev",
-        age: 21,
-        gender: "female",
-        languages: ["english", "french"],
-      },
-      {
-        name: "Mark Bautista",
-        title: "Senior Fullstack Dev",
-        age: 28,
-        gender: "male",
-        languages: ["russion", "spanish"],
-      },
-      {
-        name: "Micheal Garcia",
-        title: "CEO",
-        age: 40,
-        gender: "male",
-        languages: ["english", "latin"],
-      }
-    ];
+    const buttons = document.querySelectorAll('button');
+    const number1 = document.getElementById('num1');
+    const number2 = document.getElementById('num2');
 
-    //Machine Problem 1
-    staff.forEach((person) => {
-      const { name , age} = person
-      document.querySelector(".people").innerHTML += `Name: ${name} Age: ${age} <br/>`;
-    });
+    buttons.forEach(button => button.addEventListener('click', handleOperations));
 
-    //Machine Problem 2
-    let countAge = 0;
-    for (let i = 0; i < staff.length; i++) {
-      if (staff[i].age > 30) {
-        countAge++;
+    function handleOperations(event) {
+      const action = event.target.id;
+      const num1 = parseInt(number1.value);
+      const num2 = parseInt(number2.value);
+      let total = 0;
+
+      if (!num1 || !num2) return;
+      switch (action) {
+        case 'sum':
+          total = num1 + num2;
+          break;
+        case 'difference':
+          total = num1 - num2;
+          break;
+        case 'product':
+          total = num1 * num2;
+          break;
+        case 'quotient':
+          total = num1 / num2;
+          break;
+        case 'exponent':
+          total = num1 ** num2;
+          break;
+        default: break;
       }
+      document.querySelector('.result').innerHTML = `${action.charAt(0).toUpperCase() + action.slice(1)}: ${total}`;
     }
-    document.querySelector(".countAge").innerHTML = `Count of People of Ages greater than 30: ${countAge}`;
-    //Machine Problem 3
-    let countSpanish = 0;
-    staff.forEach((person) => {
-      if (person.languages.includes("english")) {
-        countSpanish++;
-      }
-    });
-    document.querySelector(".countLang").innerHTML = `Number of People who speaks Spanish: ${countSpanish}`;
-
 
   </script>
 </body>
