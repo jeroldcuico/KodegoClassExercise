@@ -12,7 +12,6 @@
 </head>
 
 <body>
-
   <div class="container">
     <div class="card">
       <div class="card-body">
@@ -28,15 +27,12 @@
                 <ul class="list-unstyled">
                   <li class="text-muted"><strong>Invoice to: </strong><span class="customer_name"></span></li>
                   <li class="text-muted"><strong>Address: </strong> <span class="address"></span></li>
-                  <li class="text-muted"><i class="fas fa-phone"></i> 123-456-789</li>
                 </ul>
               </div>
               <div class="col-xl-4">
                 <ul class="list-unstyled">
-                  <li class="text-muted"><i class="fas fa-circle" style="color:#84B0CA ;"></i> <span
-                      class="fw-bold">Mode of Payment:</span> <span class="mode_payment"></span></li>
-                  <li class="text-muted"><i class="fas fa-circle" style="color:#84B0CA ;"></i> <span
-                      class="fw-bold">Invoice Date: </span> <span class="invoicedate"></span></li>
+                  <li class="text-muted"><span class="fw-bold">Mode of Payment:</span><span class="mode_payment"></span></li>
+                  <li class="text-muted"><span class="fw-bold">Invoice Date: </span> <span class="invoicedate"></span></li>
                 </ul>
               </div>
             </div>
@@ -75,19 +71,18 @@
     { description: "Headset", Qty: 3, unitPrice: 500 },
     { description: "UPS", Qty: 1, unitPrice: 4000 },];
 
-
     const GetDateFormat = (date) => '0' + new Date().toLocaleDateString();
     const appendItems = (classname, value) => document.querySelector(classname).innerHTML = value;
 
     // Destructure Invoice by extracting address1 and address2
-    const { address1, address2, ...invoiceDetails } = invoice;
+    const { address1, address2 } = invoice;
     const address = `${address1}, ${address2}`;
 
     // format invoice number with paddingstart
     const padStartInvoiceNumber = invoice.invoiceNumber.padStart(10, "0");
 
     // Destructure InvoiceDetails
-    const { invoiceTo, date, paymentMode } = invoiceDetails;
+    const { invoiceTo, date, paymentMode } = invoice;
 
     appendItems('.customer_name', invoiceTo);
     appendItems('.address', address);
@@ -107,8 +102,7 @@
       newRow.insertCell(1).innerHTML = Qty;
       newRow.insertCell(2).innerHTML = unitPrice;
       newRow.insertCell(3).innerHTML = amount;
-
-      console.log(`${description}\t\t${Qty}\t${unitPrice}\t\t${amount}`);
+      //console.log(`${description}\t\t${Qty}\t${unitPrice}\t\t${amount}`);
     });
 
     //Append the Total to the End of the Table
