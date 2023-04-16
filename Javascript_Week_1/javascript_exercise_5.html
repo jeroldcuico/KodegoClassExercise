@@ -12,6 +12,7 @@
 </head>
 
 <body>
+
   <div class="container">
     <div class="card">
       <div class="card-body">
@@ -23,16 +24,19 @@
 
           <div class="container">
             <div class="row">
-              <div class="col-xl-8">
+              <div class="col-md-8">
                 <ul class="list-unstyled">
                   <li class="text-muted"><strong>Invoice to: </strong><span class="customer_name"></span></li>
                   <li class="text-muted"><strong>Address: </strong> <span class="address"></span></li>
                 </ul>
               </div>
-              <div class="col-xl-4">
+              <div class="col-md-4">
                 <ul class="list-unstyled">
-                  <li class="text-muted"><span class="fw-bold">Mode of Payment:</span><span class="mode_payment"></span></li>
-                  <li class="text-muted"><span class="fw-bold">Invoice Date: </span> <span class="invoicedate"></span></li>
+                  <li class="text-muted"><span class="fw-bold">Mode of Payment:</span> <span
+                      class="mode_payment"></span>
+                  </li>
+                  <li class="text-muted"><span class="fw-bold">Invoice Date: </span> <span class="invoicedate"></span>
+                  </li>
                 </ul>
               </div>
             </div>
@@ -71,23 +75,18 @@
     { description: "Headset", Qty: 3, unitPrice: 500 },
     { description: "UPS", Qty: 1, unitPrice: 4000 },];
 
-    const GetDateFormat = (date) => '0' + new Date().toLocaleDateString();
+    const GetDateFormat = (date) => {
+      const [year, month, day] = date.split('-');
+      return `${day}/${month}/${year}`;
+    };
     const appendItems = (classname, value) => document.querySelector(classname).innerHTML = value;
-
-    // Destructure Invoice by extracting address1 and address2
-    const { address1, address2 } = invoice;
+    // Destructure Invoice
+    const { address1, address2, invoiceTo, date, paymentMode } = invoice;
     const address = `${address1}, ${address2}`;
-
-    // format invoice number with paddingstart
-    const padStartInvoiceNumber = invoice.invoiceNumber.padStart(10, "0");
-
-    // Destructure InvoiceDetails
-    const { invoiceTo, date, paymentMode } = invoice;
-
+    const padStartInvoiceNumber = invoice.invoiceNumber.padStart(10, "0"); // format invoice number with paddingstart
     appendItems('.customer_name', invoiceTo);
     appendItems('.address', address);
     appendItems('.invoicenum', padStartInvoiceNumber);
-    appendItems('.invoicedate', GetDateFormat(date));
     appendItems('.invoicedate', GetDateFormat(date));
     appendItems('.mode_payment', paymentMode);
 
@@ -108,8 +107,7 @@
     //Append the Total to the End of the Table
     const tableFooter = table.insertRow(-1);
     let cell = tableFooter.insertCell(0);
-    cell.colspan = 3
-    cell.align = 'right'
+    cell.setAttribute('colspan', '4');
     cell.innerHTML = `Total Amount: $ ${totalAmount}`
 
 
