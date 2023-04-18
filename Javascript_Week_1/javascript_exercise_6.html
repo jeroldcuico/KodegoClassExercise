@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+</head>
+<title>Introduction to Javascript</title>
+</head>
+
+<body onload="generateRandomNumtoTextboxes()">
+  <header>
+    <h1 class="site-title">JavaScript Hands on Exercise 6</h1>
+  </header>
+
+  <section class="gradient2">
+    <div class="wrapper">
+      <div class="container">
+        <label for="numbertoWord" class="form-label fw-bold">Enter Number 1: </label>
+        <input class="form-control my-2 form-control-sm" type="number" id="numbertoWord">
+        <button class="btn btn-dark" id="convertoWord">Convert to Word</button>
+        <h3 class="results"></h3>
+      </div>
+    </div>
+  </section>
+
+  <section class="diagonal">
+    <div class="wrapper">
+      <div class="container machine2">
+        <label for="num1" class="form-label fw-bold">Enter Number 1: </label>
+        <input class="form-control my-2 form-control-sm" type="number" id="num1">
+        <label for="num2" class="form-label fw-bold">Enter Number 1: </label>
+        <input class="form-control my-2 form-control-sm" type="number" id="num2">
+        <label for="num3" class="form-label fw-bold">Enter Number 1: </label>
+        <input class="form-control my-2 form-control-sm" type="number" id="num3">
+        <button class="btn btn-dark" id="calculate">Calculate</button>
+        <button class="btn btn-dark" id="refresh">Refresh</button>
+        <h3 class="result"></h3>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    //Machine Problem 1
+    const digitstoWord = (number) => {
+      const words = ['Zero', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine'];
+      const formmatter = number.toString().split('').map((num) => words[num]).join(' ');
+      if (number < 0) {
+        return 'Negative ' + formmatter;
+      }
+      return formmatter;
+    };
+
+    const convert = () => {
+      const inputNum = parseInt(document.getElementById('numbertoWord').value);
+      const word = digitstoWord(inputNum);
+      document.querySelector('.results').innerHTML = word;
+    };
+    const button = document.getElementById('convertoWord');
+    button.addEventListener('click', convert);
+
+    //Machine Problem 2
+    const generateRandomNum = (min, max) => {
+      return Math.floor(Math.random() * (max - min + 1) + min);
+    };
+
+    const generateRandomNumtoTextboxes = () => {
+      const loopTextBoxes = document.querySelectorAll('.machine2 > input[type="number"]');
+      loopTextBoxes.forEach(input => {
+        input.value = generateRandomNum(50, 100);
+      });
+    };
+ 
+    const Calculate = () => {
+      const result = document.querySelector('.result');
+      const loopTextBoxes = document.querySelectorAll('.machine2 > input[type="number"]');
+      let total = 0;
+      loopTextBoxes.forEach(e => total += parseInt(e.value));
+      const average = total / loopTextBoxes.length;
+      console.log(loopTextBoxes)
+      result.innerHTML = (average < 75) ? `You're average is ${average.toFixed(2)} Failed` : `You're average is ${average.toFixed(2)} Passed`;
+    };
+
+    document.querySelector('#calculate').addEventListener('click', Calculate);
+    document.querySelector('#refresh').addEventListener('click', () => location.reload())
+
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

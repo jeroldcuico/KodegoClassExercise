@@ -106,9 +106,11 @@
 
     //Append the Total to the End of the Table
     const tableFooter = table.insertRow(-1);
-    let cell = tableFooter.insertCell(0);
-    cell.setAttribute('colspan', '4');
-    cell.innerHTML = `Total Amount: $ ${totalAmount}`
+    let cellspan = tableFooter.insertCell(0);
+    cellspan.setAttribute('colspan', '3');
+    cellspan.innerHTML = `Total Amount: `;
+    let celltotal = tableFooter.insertCell(1);
+    celltotal.innerHTML = totalAmount
 
 
   </script>
