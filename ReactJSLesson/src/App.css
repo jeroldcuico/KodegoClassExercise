@@ -1,0 +1,14 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /*Reset*/
+}
+
+#root {
+  color: #fff;
+  background-image: url("./assets/background.jpg");
+  background-color: #000;
+}
