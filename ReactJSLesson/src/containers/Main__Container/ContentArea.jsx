@@ -2,13 +2,23 @@ import React from "react";
 import "./ContentArea.css";
 import Staffs from "../../components/Staffs";
 import Invoice from "../../components/Invoice";
+import InvoiceList from "../../components/InvoiceList";
 
 function MainContent({ invoice, invoiceItems, data }) {
   return (
     <>
-      <div className="container">
-        <Invoice invoice={invoice} invoiceItems={invoiceItems} />
-      </div>
+      <section>
+        <div className="container">
+          <h1>InvoiceList Area</h1>
+          <InvoiceList invoice={invoice} invoiceItems={invoiceItems} />
+        </div>
+      </section>
+      <section className="bg-warning">
+        <div className="container">
+          <h1 className="text-dark">Invoice Area</h1>
+          <Invoice invoice={invoice} invoiceItems={invoiceItems} />
+        </div>
+      </section>
       <section className="bg-success">
         <div className="container">
           <h1>Staff Area</h1>

@@ -3,71 +3,70 @@ import viteLogo from "/vite.svg";
 import "./App.css";
 import { ContentArea, Footer, Header } from "./containers";
 
-
 const staffs = [
   {
     name: "Oliver Queen",
     title: "CEO",
     gender: "male",
     age: 38,
-    languages: "english"
+    languages: "english",
   },
   {
     name: "Ben Hur",
     title: "Security consultant",
     gender: "male",
     age: 25,
-    languages: ["latin", "english"]
+    languages: ["latin", "english"],
   },
   {
     name: "Jessica Alba",
     title: "Admin Assistant",
     gender: "female",
     age: 23,
-    languages: "english"
+    languages: "english",
   },
   {
     name: "Pepper Piper",
     title: "Quality Assurance",
     gender: "female",
     age: 32,
-    languages: "spanish"
+    languages: "spanish",
   },
   {
     name: "Red Sullivan",
     title: "Project Manager",
     gender: "male",
     age: 27,
-    languages: "russian"
+    languages: "russian",
   },
   {
     name: "Juan Dela Cruz",
     title: "Manager",
     age: 24,
     gender: "male",
-    languages: "russian"
+    languages: "russian",
   },
   {
     name: "Anna Salvador",
     title: "Junior Dev",
     age: 21,
     gender: "female",
-    languages: "english"
+    languages: "english",
   },
   {
     name: "Mark Bautista",
     title: "Senior Fullstack Dev",
     age: 28,
     gender: "male",
-    languages: "russian"
+    languages: "russian",
   },
   {
     name: "Micheal Garcia",
     title: "CEO",
     age: 40,
     gender: "male",
-    languages: "english"
-  }
+    languages: "english",
+  },
 ];
 
 const invoice = {
@@ -87,6 +86,8 @@ const invoiceItems = [
   { description: "Headset", Qty: 3, unitPrice: 500 },
   { description: "UPS", Qty: 1, unitPrice: 4000 },
 ];
+
+
 
 function App() {
   return (
