@@ -1,18 +1,18 @@
 import { useState } from "react";
 
 function InvoiceList({ invoice, invoiceItems }) {
-  const { invoiceTo, date, address1, address2, invoiceNumber, paymentMode } =
-    invoice;
-  const padStartInvoiceNum = invoiceNumber.padStart(10, "0");
+  /* States */
   const [itemsInvoice, setItemsInvoice] = useState(invoiceItems);
+  const [itemsDetails, setitemsDetails] = useState(invoice);
 
+  const { invoiceTo, date, address1, address2, invoiceNumber, paymentMode } = itemsDetails;
 
   const handleInputChange = (event, index) => {
     const { name, value } = event.target;
     const updatedItems = [...itemsInvoice];
-    name === "description"
-      ? (updatedItems[index][name] = value)
-      : (updatedItems[index][name] = parseInt(value));
+    name === "unitPrice" || name === "Qty"
+      ? (updatedItems[index][name] = parseInt(value))
+      : (updatedItems[index][name] = value);
     setItemsInvoice(updatedItems);
   };
 
@@ -28,9 +28,15 @@ function InvoiceList({ invoice, invoiceItems }) {
   };
   const handleDelete = (index) => {
     //const updatedItems = itemsInvoice.filter((item, i) => i !== index);
-    const updatedItems = [...itemsInvoice]
-    updatedItems.splice(index, 1)
+    const updatedItems = [...itemsInvoice];
+    updatedItems.splice(index, 1);
     setItemsInvoice(updatedItems);
+  };
+
+  const handleDeleteAll = () => {
+    const deleteAll = [...itemsInvoice];
+    deleteAll.length = 0;
+    setItemsInvoice(deleteAll);
   };
 
   return (
@@ -41,9 +47,14 @@ function InvoiceList({ invoice, invoiceItems }) {
             <div className="row d-flex align-items-baseline">
               <h2 className="text-dark">
                 Invoice Number:
-                <strong className="invoicenum text-danger">
-                  {padStartInvoiceNum}
-                </strong>
+                <input
+                  type="text"
+                  name="invoiceNumber"
+                  readOnly
+                  disabled
+                  className="form-control"
+                  value={invoiceNumber.padStart(10, '0')}
+                />
               </h2>
               <hr />
             </div>
@@ -54,13 +65,30 @@ function InvoiceList({ invoice, invoiceItems }) {
                   <ul className="list-unstyled">
                     <li className="text-muted">
                       <strong>Invoice to: </strong>
-                      <span className="customer_name">{invoiceTo}</span>
+                      <input
+                        type="text"
+                        className="form-control"
+                        name="invoiceTo"
+                        value={invoiceTo}
+                      />
                     </li>
                     <li className="text-muted">
-                      <strong>Address: </strong>
-                      <span className="address">
-                        {address1 + ", " + address2}
-                      </span>
+                      <strong>Address 1: </strong>
+                      <input
+                        type="text"
+                        className="form-control"
+                        name="address1"
+                        value={address1}
+                      />
+                    </li>
+                    <li className="text-muted">
+                      <strong>Address 2: </strong>
+                      <input
+                        type="text"
+                        className="form-control"
+                        name="address2"
+                        value={address2}
+                      />
                     </li>
                   </ul>
                 </div>
@@ -68,11 +96,21 @@ function InvoiceList({ invoice, invoiceItems }) {
                   <ul className="list-unstyled">
                     <li className="text-muted">
                       <span className="fw-bold">Mode of Payment:</span>
-                      <span className="mode_payment">{paymentMode}</span>
+                      <input
+                        type="text"
+                        className="form-control"
+                        name="paymentMode"
+                        value={paymentMode}
+                      />
                     </li>
                     <li className="text-muted">
                       <span className="fw-bold">Invoice Date: </span>
-                      <span className="invoicedate">{date}</span>
+                      <input
+                        type="text"
+                        className="form-control"
+                        name="date"
+                        value={date}
+                      />
                     </li>
                   </ul>
                 </div>
@@ -174,6 +212,12 @@ function InvoiceList({ invoice, invoiceItems }) {
                 </table>
                 <button className="btn btn-primary" onClick={addNewItem}>
                   Add New Item
+                </button>
+                <button
+                  className="btn btn-danger my-1"
+                  onClick={handleDeleteAll}
+                >
+                  Delete All
                 </button>
               </div>
               <hr />
