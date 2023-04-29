@@ -1,9 +1,15 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function InvoiceList({ invoice, invoiceItems }) {
   /* States */
-  const [itemsInvoice, setItemsInvoice] = useState(invoiceItems);
-  const [itemsDetails, setitemsDetails] = useState(invoice);
+  const [itemsInvoice, setItemsInvoice] = useState([]);
+  const [itemsDetails, setitemsDetails] = useState({});
+
+  useEffect(() => {
+    setItemsInvoice(invoiceItems)
+    setitemsDetails(invoice)
+  }, [invoiceItems]);
+
 
   const { invoiceTo, date, address1, address2, invoiceNumber, paymentMode } =
     itemsDetails;
@@ -49,7 +55,11 @@ function InvoiceList({ invoice, invoiceItems }) {
 
   const handleSubmitInvoice = (e) => {
     e.preventDefault();
-    const details = { ...itemsDetails, itemDetails: [...itemsInvoice], totalItems: getTotal() };
+    const details = {
+      ...itemsDetails,
+      itemDetails: [...itemsInvoice],
+      totalItems: getTotal(),
+    };
     setitemsDetails(details);
     console.log(details);
   };

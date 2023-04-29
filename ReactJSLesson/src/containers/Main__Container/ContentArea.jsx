@@ -1,12 +1,18 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./ContentArea.css";
 import Staffs from "../../components/Staffs";
 import Invoice from "../../components/Invoice";
 import InvoiceList from "../../components/InvoiceList";
+import EmployeeList from "../../components/EmployeeList";
 
-function MainContent({ invoice, invoiceItems, data }) {
+function MainContent({ data, invoice, invoiceItems }) {
   return (
     <>
+      <section>
+        <div className="container bg-danger">
+          <EmployeeList/>
+        </div>
+      </section>
       <section>
         <div className="container">
           <h1>InvoiceList Area</h1>

@@ -1,7 +1,7 @@
 function Invoice({ invoice, invoiceItems }) {
   const { invoiceTo, date, address1, address2, invoiceNumber, paymentMode } =
     invoice;
-  const padStartInvoiceNum = invoiceNumber.padStart(10, "0");
+
 
   let totalAmount = 0;
   const handleTotal = ({ Qty, unitPrice }) => {
@@ -19,7 +19,7 @@ function Invoice({ invoice, invoiceItems }) {
               <h2 className="text-dark">
                 Invoice Number:
                 <strong className="invoicenum text-danger">
-                  {padStartInvoiceNum}
+                  {invoiceNumber}
                 </strong>
               </h2>
               <hr />
