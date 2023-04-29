@@ -19,12 +19,8 @@ const invoiceItems = [
   { description: "UPS", Qty: 1, unitPrice: 4000 },
 ];
 
-router.get("/", (req, res, next) => {
-  res.send({ ...invoice, ...invoiceItems });
-});
-
-router.get("/invoice", (req, res, next) => {
-  res.send({ ...invoice, ...invoiceItems }.length);
+router.get("/", (req, res) => {
+  res.send({ invoiceInfo: invoice, invoiceItems });
 });
 
 module.exports = router;
