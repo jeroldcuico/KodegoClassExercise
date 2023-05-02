@@ -6,6 +6,7 @@ import InvoiceList from "../../components/InvoiceList";
 import EmployeeList from "../../components/EmployeeList";
 
 function MainContent({ data, invoice, invoiceItems }) {
+
   return (
     <>
       <section>

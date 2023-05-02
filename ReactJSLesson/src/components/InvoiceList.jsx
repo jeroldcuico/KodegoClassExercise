@@ -2,14 +2,14 @@ import { useEffect, useState } from "react";
 
 function InvoiceList({ invoice, invoiceItems }) {
   /* States */
+
   const [itemsInvoice, setItemsInvoice] = useState([]);
   const [itemsDetails, setitemsDetails] = useState({});
 
   useEffect(() => {
-    setItemsInvoice(invoiceItems)
-    setitemsDetails(invoice)
+    setItemsInvoice(invoiceItems);
+    setitemsDetails(invoice);
   }, [invoiceItems]);
-
 
   const { invoiceTo, date, address1, address2, invoiceNumber, paymentMode } =
     itemsDetails;
@@ -17,7 +17,7 @@ function InvoiceList({ invoice, invoiceItems }) {
   const handleInputChange = (event, index) => {
     const { name, value } = event.target;
     const updatedItems = [...itemsInvoice];
-    name === "description"
+    name === "description" || name === ""
       ? (updatedItems[index][name] = value)
       : (updatedItems[index][name] = parseInt(value));
     setItemsInvoice(updatedItems);
@@ -169,7 +169,7 @@ function InvoiceList({ invoice, invoiceItems }) {
                           </td>
                         </tr>
                       )}
-                      {itemsInvoice.map((item, index) => (
+                      {itemsInvoice?.map((item, index) => (
                         <tr key={index}>
                           <td>
                             <button

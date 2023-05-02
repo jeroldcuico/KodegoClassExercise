@@ -75,7 +75,20 @@ router.post("/:id", (req, res) => {
     gender: req.body.gender,
     jobTitle: req.body.jobTitle,
   };
-  employees.push(employee);
+
+  const isEmployeeExist = employees.find(
+    (emp) =>
+      emp.firstName === employee.firstName &&
+      emp.lastName === employee.lastName &&
+      emp.age === employee.age &&
+      emp.gender === employee.gender &&
+      emp.jobTitle === employee.jobTitle
+  );
+  if (isEmployeeExist) {
+    console.log(`Data has already been added`);
+  } else {
+    employees.push(employee);
+  }
   res.send(employee);
 });
 
@@ -95,7 +108,7 @@ router.put("/:id", (req, res) => {
 router.delete("/:id", (req, res) => {
   const eid = req.body.id;
   employees = employees.filter((e) => e.id !== Number(eid));
-  res.send( {message: `Employee with ID ${eid}} deleted` });
+  res.send({ message: `Employee with ID ${eid}} deleted` });
 });
 
 module.exports = router;
